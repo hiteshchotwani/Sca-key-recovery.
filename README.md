@@ -1,26 +1,37 @@
-# 🔐 Side-Channel Key Recovery (Unsupervised - Streamlit App)
+# 🔐 Side-Channel Key Recovery (Unsupervised - AES Synthetic Traces)
 
-This project demonstrates unsupervised key recovery using synthetic power traces from AES encryption. It simulates a side-channel attack leveraging the Hamming-weight leakage model, clustering, and correlation analysis — now in an interactive Streamlit interface.
+This project demonstrates unsupervised key recovery using synthetic power traces from AES encryption. It simulates a side-channel attack leveraging the Hamming-weight leakage model, clustering, and correlation analysis to recover a secret key byte.
+
+---
 
 ## 🚀 Features
 
-- Generates synthetic AES power traces using Hamming-weight leakage model
-- Performs KMeans clustering and PCA visualization
-- Recovers key byte using correlation-based inference
-- Streamlit-based interactive app (adjust parameters, visualize, download results)
+- ✅ Generates synthetic AES power traces based on Hamming-weight leakage
+- ✅ Applies **KMeans clustering** and **PCA** for unsupervised classification
+- ✅ Uses **correlation analysis** to recover key byte
+- ✅ Evaluates clustering accuracy using Adjusted Rand Index (ARI)
+
+---
 
 ## 🧰 Tech Stack
 
-- Python, NumPy, scikit-learn, Matplotlib, Streamlit
-- Unsupervised learning: KMeans, PCA
-- Cryptographic: AES S-box and Hamming-weight model
+- **Language:** Python
+- **ML Libraries:** NumPy, scikit-learn, SciPy
+- **Visualization:** Matplotlib
+- **Crypto Modeling:** AES S-box, Hamming-weight leakage model
 
-## 📷 Screenshot
+---
 
-![App Screenshot](screenshot.png)
+## 📂 File Structure
 
-## 🔧 Run the App
+- `sca.ipynb`: Jupyter Notebook implementing the full pipeline
+- `requirements.txt`: All required libraries
+- `README.md`: Documentation
+
+---
+
+## 🧪 Run the Project Locally
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+jupyter notebook sca.ipynb
