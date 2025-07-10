@@ -1,54 +1,26 @@
+# 🔐 Side-Channel Key Recovery (Unsupervised - Streamlit App)
 
-# 🔐 Side-Channel Attack (SCA) Key Recovery using Machine Learning
+This project demonstrates unsupervised key recovery using synthetic power traces from AES encryption. It simulates a side-channel attack leveraging the Hamming-weight leakage model, clustering, and correlation analysis — now in an interactive Streamlit interface.
 
-This project demonstrates how **unsupervised learning** (clustering) can be used for **Side-Channel Attacks (SCA)** to recover a key byte from AES traces using a simulated Hamming-weight leakage model.
+## 🚀 Features
 
----
+- Generates synthetic AES power traces using Hamming-weight leakage model
+- Performs KMeans clustering and PCA visualization
+- Recovers key byte using correlation-based inference
+- Streamlit-based interactive app (adjust parameters, visualize, download results)
 
-## 🎯 Features
+## 🧰 Tech Stack
 
-- Simulates AES-like traces with known leakage model
-- Performs PCA + KMeans clustering on traces
-- Recovers AES key byte by correlating predicted leakage with key guesses
-- Includes interactive **Streamlit UI**
-- High recovery accuracy (ARI ≈ 0.86)
+- Python, NumPy, scikit-learn, Matplotlib, Streamlit
+- Unsupervised learning: KMeans, PCA
+- Cryptographic: AES S-box and Hamming-weight model
 
----
+## 📷 Screenshot
 
-## 🧪 Run It Locally
+![App Screenshot](screenshot.png)
+
+## 🔧 Run the App
 
 ```bash
-git clone https://github.com/yourusername/sca-key-recovery.git
-cd sca-key-recovery
 pip install -r requirements.txt
-streamlit run sca_app.py
-```
-
----
-
-## 📦 Dependencies
-
-```txt
-streamlit
-numpy
-matplotlib
-scikit-learn
-scipy
-```
-
----
-
-## 🖼️ Screenshots
-
-| Clustering PCA | Key Correlation |
-|----------------|-----------------|
-| ![](screenshots/pca.png) | ![](screenshots/correlation.png) |
-
----
-
-## 📂 Folder Descriptions
-
-- `sca_app.py`: Main Streamlit-based app
-- `sample_traces/`: (Optional) Pre-saved traces
-- `screenshots/`: PCA and correlation graphs
-- `requirements.txt`: Dependencies
+streamlit run app.py
